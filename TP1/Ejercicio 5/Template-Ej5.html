@@ -1,39 +1,97 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Template</title>
-	</head>
-		<canvas id="canvas" width="900" height="600" style="border:#000 solid 1px;" />
-	</body>
-	<script>
-	var ctx = document.getElementById("canvas").getContext("2d");
-		//  var imageData = ctx.createImageData(500, 500);
-		//  var width = 500;
-		//  var height= 500;
-		// 	for (x=0; x<width; x++){
-		// 		for (y=0; y<height; y++){
-		// 			var range=0;
-		// 			range = Math.floor((y/height)*255);
-		// 				 setPixel(imageData,x,y,range,range,range,255);
-		// 		}
-		// 	}
-		// 	ctx.putImageData(imageData,0,0);
-		 //
-		// 	function setPixel(imageData,x,y,r,g,b,a){
-		// 		index = (x+y*imageData.width)*4;
-		// 		imageData.data[index+0] =r;
-		// 		imageData.data[index+1] =g;
-		// 		imageData.data[index+2] =b;
-		// 		imageData.data[index+3] =a;
-		function myDrawImageMethod(image){
-			ctx.drawImage(image,0,0);
-		}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Template</title>
+</head>
+<canvas id="canvas" width="900" height="600" style="border:#000 solid 1px;" />
+</body>
+<script>
+var ctx = document.getElementById("canvas").getContext("2d");
+//  var imageData = ctx.createImageData(500, 500);
+//  var width = 500;
+//  var height= 500;
+// 	for (x=0; x<width; x++){
+// 		for (y=0; y<height; y++){
+// 			var range=0;
+// 			range = Math.floor((y/height)*255);
+// 				 setPixel(imageData,x,y,range,range,range,255);
+// 		}
+// 	}
+// 	ctx.putImageData(imageData,0,0);
+//
+// 	function setPixel(imageData,x,y,r,g,b,a){
+// 		index = (x+y*imageData.width)*4;
+// 		imageData.data[index+0] =r;
+// 		imageData.data[index+1] =g;
+// 		imageData.data[index+2] =b;
+// 		imageData.data[index+3] =a;
 
-		var image1 = new Image();
-		image1.src = "http://jsequeiros.com/sites/default/files/imagen-cachorro-comprimir.jpg?1399003306";
-		image1.onload = function(){
-			myDrawImageMethod(this);
+var imageData;
+
+var image1 = new Image();
+image1.crossOrigin= '';
+image1.src = "agujero.jpg";
+image1.onload = function(){
+
+
+	ctx.drawImage(this,0,0);
+
+	imageData = ctx.getImageData(0,0,this.width,this.height);
+	for (x=0; x<imageData.width; x++){
+		for (y=0; y<imageData.height; y++){
+
+			r=getRed(imageData,x,y);
+			g=getGreen(imageData,x,y);
+			b=getBlue(imageData,x,y);
+
+			sepiaRed=Math.floor(0.393*r + 0.769*g + 0.189*b);
+			sepiaGreen=Math.floor(0.349*r + 0.686*g + 0.168*b);
+			sepiaBlue=Math.floor(0.272*r + 0.534*g + 0.131*b);
+
+			negativoRed= 255-r;
+			negativoRed= 255-g;
+			negativoRed= 255-b;
+
+			gris=(r+g+b)/3;
+
+			// if (gris < 120){
+			// 	gris = 0;
+			// }
+			// 	else {
+			// 		gris = 255;}
+
+			brilloRed=r*5;
+			brilloGreen=g*5;
+			brilloBlue=b*5;
+
+			setPixel(imageData,x,y,brilloRed,brilloGreen,brilloBlue,255);
 		}
-	</script>
+	}
+	ctx.putImageData(imageData,0,0);
+
+}
+function getRed(imageData,x,y){
+	index=(x+y*imageData.width)*4;
+	return imageData.data[index+0];
+}
+function getGreen(imageData,x,y){
+	index=(x+y*imageData.width)*4;
+	return imageData.data[index+1];
+}
+function getBlue(imageData,x,y){
+	index=(x+y*imageData.width)*4;
+	return imageData.data[index+2];
+}
+function setPixel(imageData,x,y,r,g,b,a){
+	index = (x+y*imageData.width)*4;
+	imageData.data[index+0] =r;
+	imageData.data[index+1] =g;
+	imageData.data[index+2] =b;
+	imageData.data[index+3] =a;
+}
+</script>
 </html>
+<script>
+	//binarizacion, brillo, saturaciion, suavizado, deteccion de bordes, blur
+</script>
