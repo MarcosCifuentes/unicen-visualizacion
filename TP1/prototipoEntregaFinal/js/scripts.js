@@ -1,49 +1,59 @@
 var ctx = document.getElementById("canvas").getContext("2d");
-var original = null;
+var imagen = null;
 var source = "images/kingkong.jpg";
 var controlCarga = false;
 
-function imagenPredefinida (){
+function imagenPredefinida(){
 	var predefinida = new Image();
-	predefinida.src =original;
-	imgOrigin = predefinida;
+	predefinida.src =source;
+	imagen = predefinida;
 	predefinida.onload = function () {
-		myDrawImage(this);
+		myDrawImage(this,0,0);
 	}
 }
+
 imagenPredefinida();
-}
-
-function seleccionar() {
-	controlCarga = true;
-	document.getElementById('js-seleccionarImagen').click();
-}
-
-function cargarImagen() {
-	if (controlCarga) {
-		var image = new Image();
-		image.src =document.getElementById('js-seleccionarImagen').files[0].name;
-		source = image.src;
-		original = image;
-		image.onload = function () {
-			myDrawImage(this);
-		}
-		imagenPredefinida();
-	}else{
-		imagenPredefinida();
-	}
-}
 
 function myDrawImage(image) {
-	ctx.drawImage(image,0,0);
+	ctx.drawImage(image,0,0,500,300);
 }
 
+$(function() {
+    $('#file-input').change(function(e) {
+        var file = e.target.files[0],
+            imageType = /image.*/;
+
+        if (!file.type.match(imageType))
+            return;
+
+        var reader = new FileReader();
+        reader.onload = fileOnload;
+        reader.readAsDataURL(file);
+
+    });
+
+    function fileOnload(e) {
+        var $img = $('<img>', { src: e.target.result });
+        var canvas = $('#canvas')[0];
+        var context = canvas.getContext('2d');
+
+        $img.load(function() {
+            ctx.drawImage(this, 0, 0);
+						imagen=canvas;
+        });
+
+    }
+});
+
 function guardarImagenFiltrada() {
-   ctx.toDataURL("image/jpg");
+	var dataURL = canvas.toDataURL("image/png");
+	console.log(dataURL);
+	var a = document.getElementById("guardar");
+	a.href= dataURL;
  }
 
 function filtroBlancoYNegro(){
-	myDrawImage(original);
+	myDrawImage(imagen);
 	var imageData = ctx.getImageData(0,0,ctx.canvas.width,ctx.canvas.height);
 
 	for (x=0; x<imageData.width; x++){
@@ -61,9 +71,8 @@ function filtroBlancoYNegro(){
 	ctx.putImageData(imageData,0,0);
 }
 
-
 function filtroNegativo(){
-	myDrawImage(original);
+	myDrawImage(imagen);
 	var imageData = ctx.getImageData(0,0,ctx.canvas.width,ctx.canvas.height);
 
 	for (x=0; x<imageData.width; x++){
@@ -80,7 +89,7 @@ function filtroNegativo(){
 }
 
 function filtroSepia(){
-	myDrawImage(original);
+	myDrawImage(imagen);
 	var imageData = ctx.getImageData(0,0,ctx.canvas.width,ctx.canvas.height);
 
 	for (x=0; x<imageData.width; x++){
@@ -102,7 +111,7 @@ function filtroSepia(){
 }
 
 function filtroBinarizacion(){
-	myDrawImage(original);
+	myDrawImage(imagen);
 	var imageData = ctx.getImageData(0,0,ctx.canvas.width,ctx.canvas.height);
 
 	for (x=0; x<imageData.width; x++){
