@@ -38,7 +38,7 @@ $(function() {
         var context = canvas.getContext('2d');
 
         $img.load(function() {
-            ctx.drawImage(this, 0, 0);
+            ctx.drawImage(this, 0, 0,500,300);
 						imagen=canvas;
         });
 
