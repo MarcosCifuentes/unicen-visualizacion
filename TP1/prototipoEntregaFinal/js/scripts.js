@@ -1,4 +1,5 @@
 var ctx = document.getElementById("canvas").getContext("2d");
+var ctxFiltros = document.getElementById("canvasFiltros").getContext("2d");
 var imagen = null;
 var source = "images/kingkong.jpg";
 var controlCarga = false;
@@ -15,7 +16,8 @@ function imagenPredefinida(){
 imagenPredefinida();
 
 function myDrawImage(image) {
-	ctx.drawImage(image,0,0,500,300);
+	ctx.drawImage(image,0,0,400,200);
+	ctxFiltros.drawImage(image,0,0,400,200);
 }
 
 $(function() {
@@ -38,7 +40,8 @@ $(function() {
         var context = canvas.getContext('2d');
 
         $img.load(function() {
-            ctx.drawImage(this, 0, 0,500,300);
+            ctx.drawImage(this, 0, 0,400,200);
+						ctxFiltros.drawImage(this,0,0,400,200);
 						imagen=canvas;
         });
 
@@ -46,8 +49,7 @@ $(function() {
 });
 
 function guardarImagenFiltrada() {
-	var dataURL = canvas.toDataURL("image/png");
-	console.log(dataURL);
+	var dataURL = canvasFiltros.toDataURL("image/png");
 	var a = document.getElementById("guardar");
 	a.href= dataURL;
  }
@@ -68,7 +70,7 @@ function filtroBlancoYNegro(){
 			setPixel(imageData,x,y,BlancoYNegro,BlancoYNegro,BlancoYNegro,255);
 		}
 	}
-	ctx.putImageData(imageData,0,0);
+	ctxFiltros.putImageData(imageData,0,0);
 }
 
 function filtroNegativo(){
@@ -85,7 +87,7 @@ function filtroNegativo(){
 			setPixel(imageData,x,y,negativoRed,negativoGreen,negativoBlue,255);
 		}
 	}
-	ctx.putImageData(imageData,0,0);
+	ctxFiltros.putImageData(imageData,0,0);
 }
 
 function filtroSepia(){
@@ -107,7 +109,7 @@ function filtroSepia(){
 			setPixel(imageData,x,y,sepiaRed,sepiaGreen,sepiaBlue,255);
 		}
 	}
-	ctx.putImageData(imageData,0,0);
+	ctxFiltros.putImageData(imageData,0,0);
 }
 
 function filtroBinarizacion(){
@@ -133,7 +135,7 @@ function filtroBinarizacion(){
 				setPixel(imageData,x,y,BYNBInario,BYNBInario,BYNBInario,255);
 			}
 		}
-		ctx.putImageData(imageData,0,0);
+		ctxFiltros.putImageData(imageData,0,0);
 	}
 
 	function getRed(imageData,x,y){
