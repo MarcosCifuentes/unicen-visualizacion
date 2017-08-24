@@ -1,3 +1,7 @@
 body {
     background-image: url('../images/fondo (2).jpg');
 }
+
+a{
+  background-color: black;
+}

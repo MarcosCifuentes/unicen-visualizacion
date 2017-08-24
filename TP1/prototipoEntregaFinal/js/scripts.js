@@ -16,43 +16,43 @@ function imagenPredefinida(){
 imagenPredefinida();
 
 function myDrawImage(image) {
-	ctx.drawImage(image,0,0,400,200);
-	ctxFiltros.drawImage(image,0,0,400,200);
+	ctx.drawImage(image,0,0,500,300);
+	ctxFiltros.drawImage(image,0,0,500,300);
 }
 
 $(function() {
-    $('#file-input').change(function(e) {
-        var file = e.target.files[0],
-            imageType = /image.*/;
+	$('#file-input').change(function(e) {
+		var file = e.target.files[0],
+		imageType = /image.*/;
 
-        if (!file.type.match(imageType))
-            return;
+		if (!file.type.match(imageType))
+		return;
 
-        var reader = new FileReader();
-        reader.onload = fileOnload;
-        reader.readAsDataURL(file);
+		var reader = new FileReader();
+		reader.onload = fileOnload;
+		reader.readAsDataURL(file);
 
-    });
+	});
 
-    function fileOnload(e) {
-        var $img = $('<img>', { src: e.target.result });
-        var canvas = $('#canvas')[0];
-        var context = canvas.getContext('2d');
+	function fileOnload(e) {
+		var $img = $('<img>', { src: e.target.result });
+		var canvas = $('#canvas')[0];
+		var context = canvas.getContext('2d');
 
-        $img.load(function() {
-            ctx.drawImage(this, 0, 0,400,200);
-						ctxFiltros.drawImage(this,0,0,400,200);
-						imagen=canvas;
-        });
+		$img.load(function() {
+			ctx.drawImage(this, 0, 0,500,300);
+			ctxFiltros.drawImage(this,0,0,500,300);
+			imagen=canvas;
+		});
 
-    }
+	}
 });
 
 function guardarImagenFiltrada() {
 	var dataURL = canvasFiltros.toDataURL("image/png");
 	var a = document.getElementById("guardar");
 	a.href= dataURL;
- }
+}
 
 function filtroBlancoYNegro(){
 	myDrawImage(imagen);
@@ -136,6 +136,58 @@ function filtroBinarizacion(){
 			}
 		}
 		ctxFiltros.putImageData(imageData,0,0);
+	}
+
+	function filtroBlur(){
+		convolve([[ 1,  2,  1],
+      [ 2,  4,  2],
+      [ 1,  2,  1]])
+	}
+
+	function filtroBorderLine(){
+		convolve([[ 1,  1,  1],
+      [ 1, -7,  1],
+      [ 1,  1,  1]])
+	}
+
+	function convolve(matrix,offset){
+		var m = [].concat(matrix[0], matrix[1], matrix[2]); // flatten
+		divisor = m.reduce(function(a, b) {return a + b;}) || 1; // sum
+		var oldpx = ctx.getImageData(0,0,ctx.canvas.width,ctx.canvas.height).data;
+		var newdata = ctxFiltros.createImageData(ctx.getImageData(0,0,ctx.canvas.width,ctx.canvas.height));
+		var newpx = newdata.data
+		var len = newpx.length;
+		var res = 0;
+		var w = 500;
+
+		for (var i = 0; i < len; i++) {
+    if ((i + 1) % 4 === 0) {
+      newpx[i] = oldpx[i];
+
+    }
+		res = 0;
+	     var these = [
+	       oldpx[i - w * 4 - 4] || oldpx[i],
+	       oldpx[i - w * 4]     || oldpx[i],
+	       oldpx[i - w * 4 + 4] || oldpx[i],
+	       oldpx[i - 4]         || oldpx[i],
+	       oldpx[i],
+	       oldpx[i + 4]         || oldpx[i],
+	       oldpx[i + w * 4 - 4] || oldpx[i],
+	       oldpx[i + w * 4]     || oldpx[i],
+	       oldpx[i + w * 4 + 4] || oldpx[i]
+	     ];
+	     for (var j = 0; j < 9; j++) {
+	       res += these[j] * m[j];
+	     }
+	     res /= divisor;
+	     if (offset) {
+	       res += offset;
+	     }
+	     newpx[i] = res;
+
+  }
+  ctxFiltros.putImageData(newdata,0,0);
 	}
 
 	function getRed(imageData,x,y){
