@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Template</title>
+</head>
+<canvas id="canvas" width="900" height="600" style="border:#000 solid 1px;" />
+</body>
+<script>
+var ctx = document.getElementById("canvas").getContext("2d");
+
+
+// var gradient = ctx.createLinearGradient(10, 90, 200, 90);
+// gradient.addColorStop(0, 'black');
+// gradient.addColorStop(0.50, 'white');
+// gradient.addColorStop(0.75, 'red');
+// gradient.addColorStop(1, 'yellow');
+// ctx.fillStyle = gradient;
+// ctx.fillRect(10, 10, 200, 250);
+
+ function Circle(paramPosX,paramPosY,paramRadio,paramColor){
+	 this.posX=paramPosX;
+	 this.posY=paramPosY;
+	 this.radio=paramRadio;
+	 this.color=paramColor;
+ }
+
+ Circle.prototype.draw= function (ctx){
+	 ctx.fillStyle = this.color;
+	 ctx.beginPath();
+	 ctx.arc(this.posX,this.posY,this.radio,0,Math.PI * 2);
+	 ctx.fill();
+	 ctx.closePath();
+ }
+ function getRandomColor() {
+ var letters = '0123456789ABCDEF';
+ var color = '#';
+ for (var i = 0; i < 6; i++) {
+ 	color += letters[Math.floor(Math.random() * 16)];
+ }
+ return color;
+ }
+ for (var i = 0; i < 50; i++) {
+	var color = getRandomColor();
+
+	 var randomX= Math.random() * (900 - 0) + 0;
+	 var randomY= Math.random() * (600 - 0) + 0;
+	 var gradient = ctx.createLinearGradient(randomX, randomY, 50,90);
+	 gradient.addColorStop(0, 'black');
+	 gradient.addColorStop(0.50, 'white');
+	 gradient.addColorStop(0.75, 'red');
+	 gradient.addColorStop(1, 'yellow');
+	 var circulo =  new Circle(randomX,randomY,50,gradient)
+ 	 ctx.onclick = circulo.draw(ctx);
+ }
+
+
+</script>
+</html>

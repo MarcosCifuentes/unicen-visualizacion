@@ -2,6 +2,11 @@ body {
     background-image: url('../images/fondo (2).jpg');
 }
 
+@font-face {
+    font-family: "My Custom Font";
+    src: url('../fonts/Queen of Camelot.otf') format("truetype");
+}
+
 a{
   background-color: black;
 }
@@ -11,11 +16,15 @@ a{
 }
 
 #busqueda{
-  font-size: 150%;
+  font-size: 200%;
+}
+
+#titulo{
+  font-size: 400%;
 }
 
 .estilo{
   font-style: italic;
-  font-family: serif;
+  font-family: "My Custom Font", Verdana, Tahoma;
 
 }

@@ -8,35 +8,40 @@
   <title>MyStragram</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/estilo.css">
+  <link rel="shortcut icon" type="image/png" href="images/camera.png"/>
 
 </head>
 <body>
-  <h1  class="col-md-12 text-center estilo">MYStagram</h1>
+  <h1 id="titulo"  class="col-md-12 text-center estilo">MYStagram</h1>
   <div class="row">
     <div class="">
       <canvas id="canvas" width="500" height="300" style="display: none;" />
     </div>
     <div class="col-md-12 text-center">
-      <canvas id="canvasFiltros" width="500" height="300" style="border:#000 solid 1px;" />
+      <canvas id="canvasFiltros" width="500" height="300" style="border:#000 solid 1px;" class="img-responsive center-block " />
     </div>
   </div>
   <div class="align-bottom col-md-12">
-    <p id="busqueda" class="estilo">Busque una imagen para aplicar los filtros</p>
-    <input type="file" id="file-input" >
-    <a id="guardar" href="" download class="btn guardar estilo " onclick="guardarImagenFiltrada()" style="border:#000 solid 1px;" >Guardar Imagen</a>
+    <p id="busqueda" class="estilo">Busque una imagen</p>
+    <label class="btn btn-primary btn-file">
+      <span></span>Cargar Imagen
+    <input type="file" id="file-input" style="display:none;" >
+    </label>
   </div>
 
-  <div class="col-md-12 text-left">
-    <p id="seleccion" class="estilo" >Seleccione un Filtro para la imagen</p>
-    <img src="images/kongblancoynegro.png" onclick="filtroBlancoYNegro()" class="img-thumbnail" alt="Kong Blanco y negro" width="200" height="200">
-    <img src="images/kongsepia.png" onclick="filtroSepia()" class="img-thumbnail" alt="Kong Sepia" width="200" height="200">
-    <img src="images/kongnegativo.png" onclick="filtroNegativo()" class="img-thumbnail" alt="Kong Negativo" width="200" height="200">
-    <img src="images/kongbinario.png" onclick="filtroBinarizacion()" class="img-thumbnail" alt="Kong Binarizado" width="200" height="200">
-    <img src="images/kongblur.png" onclick="filtroBlur()" class="img-thumbnail" alt="Kong Blur" width="200" height="200">
-    <img src="images/kongdeteccionbordes.png" onclick="filtroBorderLine()" class="img-thumbnail" alt="Kong Bordes" width="200" height="200">
-    <img src="images/kongsharpen.png" onclick="filtroSharpen()" class="img-thumbnail" alt="Kong Sharpen" width="200" height="200">
+  <div class="col-md-12 text-center">
+    <p id="seleccion" class="estilo" >Seleccione un Filtro </p>
+    <img src="images/kongblancoynegro.png" onclick="filtroBlancoYNegro()" class="img-thumbnail" alt="Kong Blanco y negro" width="100" height="100">
+    <img src="images/kongsepia.png" onclick="filtroSepia()" class="img-thumbnail" alt="Kong Sepia" width="100" height="100">
+    <img src="images/kongnegativo.png" onclick="filtroNegativo()" class="img-thumbnail" alt="Kong Negativo" width="100" height="100">
+    <img src="images/kongbinario.png" onclick="filtroBinarizacion()" class="img-thumbnail" alt="Kong Binarizado" width="100" height="100">
+    <img src="images/kongblur.png" onclick="filtroBlur()" class="img-thumbnail" alt="Kong Blur" width="100" height="100">
+    <img src="images/kongdeteccionbordes.png" onclick="filtroBorderLine()" class="img-thumbnail" alt="Kong Bordes" width="100" height="100">
+    <img src="images/kongsharpen.png" onclick="filtroSharpen()" class="img-thumbnail" alt="Kong Sharpen" width="100" height="100">
   </div>
-
+<div class="row text-center ">
+  <a id="guardar" href="" download class="btn guardar estilo " onclick="guardarImagenFiltrada()" style="border:#000 solid 1px;" >Guardar Imagen</a>
+</div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/scripts.js"></script>

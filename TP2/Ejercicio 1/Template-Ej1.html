@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Template</title>
+	</head>
+	<div id="div">
+		<p>
+			vamo a cambiarlo
+		</p>
+	</div>
+		<canvas id="canvas" width="500" height="300" style="border:#000 solid 1px;" />
+	</body>
+	<script>
+    var ctx = document.getElementById("canvas").getContext("2d");
+		canvas.onclick=pintarFondo2;
+		canvas.onmousemove=pintarFondo1;
+		canvas.onmouseout=pintarFondo3;
+		canvas.ondblclick=pintarFondo4;
+		function pintarFondo1(){
+			ctx.fillStyle = "#000000";
+			ctx.fillRect(250,25,150,100);
+		}
+
+		function pintarFondo2(){
+			ctx.fillStyle = "#7fffd4";
+			ctx.fillRect(250,25,150,100);
+		}
+
+		function pintarFondo3(){
+			ctx.fillStyle = "#a041f2";
+			ctx.fillRect(100,0,150,100);
+		}
+
+		function pintarFondo4(){
+			ctx.fillStyle = "##6b5e6b";
+			ctx.fillRect(0,0,150,100);
+		}
+	</script>
+</html>
