@@ -5,3 +5,17 @@ body {
 a{
   background-color: black;
 }
+
+#seleccion{
+  font-size: 200%;
+}
+
+#busqueda{
+  font-size: 150%;
+}
+
+.estilo{
+  font-style: italic;
+  font-family: serif;
+
+}

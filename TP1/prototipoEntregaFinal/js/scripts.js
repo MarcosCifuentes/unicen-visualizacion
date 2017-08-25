@@ -150,6 +150,12 @@ function filtroBinarizacion(){
       [ 1,  1,  1]])
 	}
 
+	function filtroSharpen(){
+		convolve([[ 0, -2,  0],
+      [-2, 11, -2],
+      [ 0, -2,  0]])
+	}
+
 	function convolve(matrix,offset){
 		var m = [].concat(matrix[0], matrix[1], matrix[2]); // flatten
 		divisor = m.reduce(function(a, b) {return a + b;}) || 1; // sum
