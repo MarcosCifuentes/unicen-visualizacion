@@ -1,0 +1,21 @@
+body {
+    background-image: url('../images/fondo (2).jpg');
+}
+
+a{
+  background-color: black;
+}
+
+#seleccion{
+  font-size: 200%;
+}
+
+#busqueda{
+  font-size: 150%;
+}
+
+.estilo{
+  font-style: italic;
+  font-family: serif;
+
+}
