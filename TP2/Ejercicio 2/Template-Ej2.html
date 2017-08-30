@@ -18,41 +18,83 @@ var ctx = document.getElementById("canvas").getContext("2d");
 // ctx.fillStyle = gradient;
 // ctx.fillRect(10, 10, 200, 250);
 
- function Circle(paramPosX,paramPosY,paramRadio,paramColor){
-	 this.posX=paramPosX;
-	 this.posY=paramPosY;
-	 this.radio=paramRadio;
-	 this.color=paramColor;
- }
+function Circle(paramPosX,paramPosY,paramRadio,paramColor){
+	this.posX=paramPosX;
+	this.posY=paramPosY;
+	this.radio=paramRadio;
+	this.color=paramColor;
+}
 
- Circle.prototype.draw= function (ctx){
-	 ctx.fillStyle = this.color;
-	 ctx.beginPath();
-	 ctx.arc(this.posX,this.posY,this.radio,0,Math.PI * 2);
-	 ctx.fill();
-	 ctx.closePath();
- }
- function getRandomColor() {
- var letters = '0123456789ABCDEF';
- var color = '#';
- for (var i = 0; i < 6; i++) {
- 	color += letters[Math.floor(Math.random() * 16)];
- }
- return color;
- }
- for (var i = 0; i < 50; i++) {
-	var color = getRandomColor();
+function Rectangle(paramPosX,paramPosY,paramlado1,paramlado2,paramColor){
+	this.posX=paramPosX;
+	this.posY=paramPosY;
+	this.lado1=paramlado1;
+	this.lado2=paramlado2;
+	this.color=paramColor;
+}
 
-	 var randomX= Math.random() * (900 - 0) + 0;
-	 var randomY= Math.random() * (600 - 0) + 0;
-	 var gradient = ctx.createLinearGradient(randomX, randomY, 50,90);
-	 gradient.addColorStop(0, 'black');
-	 gradient.addColorStop(0.50, 'white');
-	 gradient.addColorStop(0.75, 'red');
-	 gradient.addColorStop(1, 'yellow');
-	 var circulo =  new Circle(randomX,randomY,50,gradient)
- 	 ctx.onclick = circulo.draw(ctx);
- }
+Rectangle.prototype.draw= function (canvas){
+	ctx.fillStyle = this.color;
+	ctx.fillRect(this.posX,this.posY,this.lado1,this.lado2);
+}
+Circle.prototype.draw= function (canvas){
+	ctx.fillStyle = this.color;
+	ctx.beginPath();
+	ctx.arc(this.posX,this.posY,this.radio,0,Math.PI * 2);
+	ctx.fill();
+	ctx.closePath();
+}
+
+Circle.prototype.detectarPunto= function (canvas){
+ var	d1 = Math.sqrt(Math.pow(cX - this.posX,2) + Math.pow(cY - this.posY,2));
+ return d1;
+}
+function mouseDown(e) {
+	//dentro del Element del document
+	var cX = e.clientX;
+	var cY = e.clientY;
+}
+function getRandomColor() {
+	var letters = '0123456789ABCDEF';
+	var color = '#';
+	for (var i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+	}
+	return color;
+}
+
+// function dibujarCirculo(e){
+//
+// 	var	posX=e.clientX;
+// 	var	posY=e.clientY;
+//
+//
+//
+//
+//
+// }
+
+function dibujarRectangulo(e){
+
+	var	posX=100;
+	var	posY=200;
+
+	var rectangulo =  new Rectangle(posX,posY,50,100,getRandomColor())
+
+	rectangulo.draw();
+
+}
+var circulo1 =  new Circle(100,200,50,getRandomColor())
+canvas.onload = circulo1.draw();
+var circulo2 =  new Circle(200,400,50,getRandomColor())
+canvas.onload = circulo2.draw();
+var circulo3 =  new Circle(150,300,50,getRandomColor())
+canvas.onload = circulo3.draw();
+
+var rectangulo =  new Rectangle(0,0,100,100,getRandomColor());
+canvas.onload = rectangulo.draw();
+
+
 
 
 </script>
