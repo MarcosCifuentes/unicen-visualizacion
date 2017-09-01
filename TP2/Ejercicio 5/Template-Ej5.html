@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Template</title>
+</head>
+<canvas id="canvas" width="900" height="600" style="border:#000 solid 1px;" />
+</body>
+<script>
+var ctx = document.getElementById("canvas").getContext("2d");
+
+function Circle(paramPosX,paramPosY,paramRadio,paramColor){
+	this.posX=paramPosX;
+	this.posY=paramPosY;
+	this.radio=paramRadio;
+	this.color=paramColor;
+}
+
+function Rectangle(paramPosX,paramPosY,paramlado1,paramlado2,paramColor){
+	this.posX=paramPosX;
+	this.posY=paramPosY;
+	this.lado1=paramlado1;
+	this.lado2=paramlado2;
+	this.color=paramColor;
+}
+
+
+Circle.prototype.draw= function (canvas){
+	ctx.fillStyle = this.color;
+	ctx.beginPath();
+	ctx.arc(this.posX,this.posY,this.radio,0,Math.PI * 2);
+	ctx.fill();
+	ctx.closePath();
+}
+
+Circle.prototype.detectarPunto= function (canvas){
+ var	d1 = Math.sqrt(Math.pow(cX - this.posX,2) + Math.pow(cY - this.posY,2));
+ return d1;
+}
+function mouseDown(e) {
+	//dentro del Element del document
+	var cX = e.clientX;
+	var cY = e.clientY;
+}
+function getRandomColor() {
+	var letters = '0123456789ABCDEF';
+	var color = '#';
+	for (var i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+	}
+	return color;
+}
+
+// function dibujarCirculo(e){
+//
+// 	var	posX=e.clientX;
+// 	var	posY=e.clientY;
+//
+//
+//
+//
+//
+// }
+
+function dibujarRectangulo(e){
+
+	var	posX=100;
+	var	posY=200;
+
+	var rectangulo =  new Rectangle(posX,posY,50,100,getRandomColor())
+
+	rectangulo.draw();
+
+}
+var circulo1 =  new Circle(100,200,50,getRandomColor())
+canvas.onload = circulo1.draw();
+var circulo2 =  new Circle(200,400,50,getRandomColor())
+canvas.onload = circulo2.draw();
+var circulo3 =  new Circle(150,300,50,getRandomColor())
+canvas.onload = circulo3.draw();
+
+var rectangulo =  new Rectangle(0,0,100,100,getRandomColor());
+canvas.onload = rectangulo.draw();
+
+
+
+
+</script>
+</html>
