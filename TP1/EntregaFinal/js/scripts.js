@@ -2,7 +2,6 @@ var ctx = document.getElementById("canvas").getContext("2d");
 var ctxFiltros = document.getElementById("canvasFiltros").getContext("2d");
 var imagen = null;
 var source = "images/kingkong.jpg";
-var controlCarga = false;
 
 function imagenPredefinida(){
 	var predefinida = new Image();

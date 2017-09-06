@@ -1,6 +1,5 @@
 var ctx = document.getElementById("canvas").getContext("2d");
 
-
 function getRandomColor() {
 	var letters = '0123456789ABCDEF';
 	var color = '#';
@@ -25,12 +24,13 @@ class Rectangle{
 
 	selectRectangle(e){
 
-		var cX = e.clientX;
-	 	var cY = e.clientY;
+		var cX = e.layerX;
+		var cY = e.layerY;
 
 
 		if (((this.posX<cX) && ((this.posX + this.ladoX) > cX))&&
 		((this.posY<cY) && ((this.posY + this.ladoY) > cY))){
+
 		}
 	}
 }
@@ -43,21 +43,22 @@ var control=" ";
 // 		canvas.onload = rectangulo1.draw();
 // 	}
 // }
+
 var rectangulo1 =  new Rectangle(30,0,50,20,getRandomColor());
-canvas.onload = rectangulo1.draw();
+rectangulo1.draw();
 var rectangulo2 =  new Rectangle(20,20,75,20,getRandomColor());
-canvas.onload = rectangulo2.draw();
+rectangulo2.draw();
 var rectangulo3 =  new Rectangle(10,40,100,20,getRandomColor());
-canvas.onload = rectangulo3.draw();
+rectangulo3.draw();
 var rectangulo4 =  new Rectangle(0,60,125,20,getRandomColor());
-canvas.onload = rectangulo4.draw();
+rectangulo4.draw();
 
 canvas.addEventListener('click',function(e) {rectangulo1.selectRectangle(e)});
 
 // function mouseDown(e) {
 //
-// 	var cX = e.clientX;
-// 	var cY = e.clientY;
+// 	var cX = e.layerX;
+// 	var cY = e.layerY;
 //
 // 	for (var i = 0; i < discos.length; i++) {
 // 		if ((discos[i].posX <=cX &&(discos[i].posX+discos[i].ladoX) >=cX)&& (discos[i].posY<=cY && (discos[i].posY+discos[i].ladoY) >=cY ){

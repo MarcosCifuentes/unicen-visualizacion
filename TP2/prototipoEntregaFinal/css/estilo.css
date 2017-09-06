@@ -1,1 +1,10 @@
+body {
+    background-image: url('../images/fondo.jpg');
+    background-attachment: inherit;
+}
 
+#canvas
+{
+  background-image: url('../images/fondocanvas.jpg');
+  background-position: center;
+}
