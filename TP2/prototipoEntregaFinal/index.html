@@ -14,18 +14,23 @@
 <body>
   <h1  class="col-md-12 text-center ">Torres de Hanoi</h1>
   <div class="col-md-12 text-center">
-    <canvas id="canvas" width="900" height="400" style="border:#000 solid 1px;" class="img-responsive center-block "/>
+    <canvas id="canvas" width="1000" height="400" style="border:#000 solid 1px;" class="img-responsive center-block "/>
   </div>
   <div class="col-md-12 text-center">
-    <p id="moves">
-      Movimientos: 0
+    <p>Movimientos Realizados</p>
+    <p id="Movimientos">
     </p>
-    <button type="button" name="button">Facil</button>
-    <button type="button" name="button">Intermedio</button>
-    <button type="button" name="button">Dificil</button>
+
+    <button type="button" name="button" onclick="jugar(4);">Facil</button>
+    <button type="button" name="button" onclick="jugar(5);">Intermedio</button>
+    <button type="button" name="button" onclick="jugar(6);">Dificil</button>
+    <button type="button" name="button" onclick="jugar(10);">Pesadilla</button>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/scripts.js"></script>
+  <script src="js/rectangle.js"></script>
+  <script src="js/torre.js"></script>
+  <script src="js/juego.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
