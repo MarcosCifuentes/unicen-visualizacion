@@ -40,4 +40,19 @@ class juego{
       return false;
   }
 
+  ganar(){
+    if(this.dificultad == this.torreDerecha.rectangulosEnTorre())
+      return true;
+    else
+      return false;
+  }
+
+  getMovimientos(){
+    return this.movimientos;
+  }
+
+  actualizarMovimientos(){
+    this.movimientos++;
+    document.getElementById("movimientos").innerHTML = this.movimientos;
+  }  
 }

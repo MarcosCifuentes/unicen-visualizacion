@@ -35,6 +35,18 @@ canvas.onmouseup = function(e){
 			siguiente = null;
 			anterior = null;
 			auxiliar = null;
+			if(instancia.ganar()){
+				alert("HAS GANADO EN "+	instancia.getMovimientos() +" MOVIMIENTOS");
+			}
+		}
+		else{
+			alert("No permitido");
+			anterior.putRectangle(auxiliar);
+			siguiente = null;
+			anterior = null;
+			auxiliar = null;
+		}
+	}
 
 	instancia.draw(ctx);
 }
