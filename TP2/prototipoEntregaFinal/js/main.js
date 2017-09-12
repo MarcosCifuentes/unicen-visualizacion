@@ -36,11 +36,11 @@ canvas.onmouseup = function(e){
 			anterior = null;
 			auxiliar = null;
 			if(instancia.ganar()){
-				alert("HAS GANADO EN "+	instancia.getMovimientos() +" MOVIMIENTOS");
+				document.getElementById("notificaciones").innerHTML = "HAS GANADO EN "+	instancia.getMovimientos() +" MOVIMIENTOS";
 			}
 		}
 		else{
-			alert("No permitido");
+			document.getElementById("notificaciones").innerHTML = "Movimiento no permitido (piezas de menor a mayor)"
 			anterior.putRectangle(auxiliar);
 			siguiente = null;
 			anterior = null;
