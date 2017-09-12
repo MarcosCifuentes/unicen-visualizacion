@@ -38,4 +38,21 @@ class torre {
     }
   }
 
+  rectangulosEnTorre(){
+    return this.Rectangulos.length;
+  }
+
+  checkClicked(posX,posY){
+    if ((posX > this.posX-(this.width/2)) && (posX < this.posX+(this.width/2)))
+      return true;
+    else
+      return false;
+  }
+
+  checkEmpty(){
+    if (this.Rectangulos.length > 0)
+      return true;
+    else
+      return false;
+  }
 }

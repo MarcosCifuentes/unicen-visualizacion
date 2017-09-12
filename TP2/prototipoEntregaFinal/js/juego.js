@@ -17,4 +17,27 @@ class juego{
     this.torreCentro.draw(ctx);
     this.torreDerecha.draw(ctx);
   }
+
+  checkSelected (posX,posY){
+    if(this.torreIzquierda.checkClicked(posX,posY))
+      return this.torreIzquierda;
+    else if(this.torreCentro.checkClicked(posX,posY))
+      return this.torreCentro;
+    else if(this.torreDerecha.checkClicked(posX,posY))
+      return this.torreDerecha;
+    else
+      return null;
+  }
+
+  checkEmpty(posX,posY){
+    if((this.torreIzquierda.checkClicked(posX,posY)) && (this.torreIzquierda.checkEmpty()))
+      return true;
+    else if((this.torreCentro.checkClicked(posX,posY)) && (this.torreCentro.checkEmpty()))
+      return true;
+    else if((this.torreDerecha.checkClicked(posX,posY)) && (this.torreDerecha.checkEmpty()))
+      return true;
+    else
+      return false;
+  }
+
 }
