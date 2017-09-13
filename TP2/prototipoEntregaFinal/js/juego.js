@@ -19,12 +19,15 @@ class Juego{
   }
 
   checkSelected (posX,posY){
-    if(this.torreIzquierda.checkClicked(posX,posY))
+    if(this.torreIzquierda.checkClicked(posX,posY)){
       return this.torreIzquierda;
-    else if(this.torreCentro.checkClicked(posX,posY))
+      }
+    else if(this.torreCentro.checkClicked(posX,posY)){
       return this.torreCentro;
-    else if(this.torreDerecha.checkClicked(posX,posY))
+      }
+    else if(this.torreDerecha.checkClicked(posX,posY)){
       return this.torreDerecha;
+      }
     else
       return "seleccione un disco";
   }
