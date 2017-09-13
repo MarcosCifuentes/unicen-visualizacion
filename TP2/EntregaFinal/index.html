@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Torres de Hanoi</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="shortcut icon" type="image/png" href="images/hanoi.jpg"/>
+
+</head>
+<body>
+  <div class="row col-md-12 text-center ">
+    <h1  class="col-md-12 text-center estilo"><img  class="imagenestitulo" src= "images/torre2.png"; alt="torre">Torres de Hanoi<img  class="imagenestitulo" src= "images/torre2.png"; alt="torre"></h1>
+  </div>
+  <div class="font-size">
+    <div class="control col-md-2 text-left img-responsive center-block" >
+      <p class="estilo">Elegir Dificultad</p>
+      <div class="">
+        <button class="btn-success estilo" type="button" name="button" onclick="jugar(4);">Facil</button>
+      </div>
+      <div class="">
+        <button class="btn-primary estilo" type="button" name="button" onclick="jugar(5);">Intermedio</button>
+      </div>
+      <div class="">
+        <button class="btn-warning estilo" type="button" name="button" onclick="jugar(6);">Dificil</button>
+      </div>
+      <div class="">
+        <button class="btn-danger estilo" type="button" name="button" onclick="jugar(10);">Pesadilla</button>
+      </div>
+      <div class="">
+        <p class="estilo">Movimientos Realizados</p>
+        <p class="estilo" id="movimientos">
+        </p>
+        <p class="estilo" id="notificaciones">
+        </p>
+      </div>
+    </div>
+    <div class="">
+      <div class="col-md-10 text-right">
+        <canvas id="canvas" width="900" height="400" class="img-responsive center-block "/>
+
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/rectangle.js"></script>
+  <script src="js/torre.js"></script>
+  <script src="js/juego.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
