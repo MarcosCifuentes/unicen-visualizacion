@@ -1,4 +1,4 @@
-class torre {
+class Torre {
   constructor(posicion){
     this.Rectangulos = [];
     this.posX=posicion;

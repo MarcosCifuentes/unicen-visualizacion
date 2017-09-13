@@ -6,7 +6,7 @@ var anterior = null;
 var siguiente = null;
 
 function jugar(dificultad){
-	instancia = new juego(dificultad);
+	instancia = new Juego(dificultad);
 	instancia.draw(ctx);
 	document.getElementById("movimientos").innerHTML = 0;
 }
@@ -15,7 +15,6 @@ canvas.onmousedown = function(e){
 	anterior = instancia.checkSelected(e.layerX,e.layerY);
 	if(anterior.checkEmpty()){
 		auxiliar = anterior.takeRectangle();
-		instancia.actualizarMovimientos();
 	}
 	else
 	anterior = null;
@@ -35,8 +34,9 @@ canvas.onmouseup = function(e){
 			siguiente = null;
 			anterior = null;
 			auxiliar = null;
+			instancia.actualizarMovimientos();
 			if(instancia.ganar()){
-				document.getElementById("notificaciones").innerHTML = "HAS GANADO EN "+	instancia.getMovimientos() +" MOVIMIENTOS";
+				document.getElementById("notificaciones").innerHTML = "¡¡¡GANASTE!!!, lo has logrado en "+	instancia.getMovimientos() +" movimientos";
 			}
 		}
 		else{

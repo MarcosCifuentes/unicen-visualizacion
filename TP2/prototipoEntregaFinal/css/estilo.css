@@ -1,5 +1,5 @@
 body {
-    background-image: url('../images/fondo.jpg');
+    background-image: url('../images/fondo2.jpg');
     background-attachment: inherit;
 }
 
@@ -7,4 +7,24 @@ body {
 {
   background-image: url('../images/fondocanvas.jpg');
   background-position: center;
+  border:#000 solid 1px;
+}
+
+@font-face {
+    font-family: "My Custom Font";
+    src: url('../fonts/CAROBTN_.TTF') format("truetype");
+}
+.estilo{
+  font-style: italic;
+  font-family: "My Custom Font", Verdana, Tahoma;
+}
+ .font-size{
+   font-size: 20px;
+ }
+.imagenestitulo{
+ width: 60px;
+ height: 60px;
+}
+.control{
+  border:#000 solid 5px;
 }

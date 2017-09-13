@@ -1,8 +1,8 @@
-class juego{
+class Juego{
   constructor(dificultad){
-    this.torreIzquierda = new torre(200);
-    this.torreCentro = new torre(500);
-    this.torreDerecha = new torre(800);
+    this.torreIzquierda = new Torre(150);
+    this.torreCentro = new Torre(450);
+    this.torreDerecha = new Torre(750);
     this.movimientos = 0;
     this.dificultad = dificultad;
     for(var i=0; i<dificultad; i++){
@@ -26,7 +26,7 @@ class juego{
     else if(this.torreDerecha.checkClicked(posX,posY))
       return this.torreDerecha;
     else
-      return null;
+      return "seleccione un disco";
   }
 
   checkEmpty(posX,posY){
@@ -54,5 +54,5 @@ class juego{
   actualizarMovimientos(){
     this.movimientos++;
     document.getElementById("movimientos").innerHTML = this.movimientos;
-  }  
+  }
 }
