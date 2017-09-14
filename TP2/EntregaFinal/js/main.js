@@ -7,6 +7,7 @@ var torreSiguente = null;
 function jugar(dificultad){
 	nuevoJuego = new Juego(dificultad);
 	nuevoJuego.draw(ctx);
+	document.getElementById("mensajeMovimientos").innerHTML ="Movimientos Realizados";
 	document.getElementById("movimientos").innerHTML = 0;
 	document.getElementById("notificaciones").innerHTML ="";
 }

@@ -49,7 +49,7 @@ class Torre {
       return false;
   }
 
-  tieneDiscos(){
+  tieneRectangulos(){
     if (this.Rectangulos.length > 0)
       return true;
     else
