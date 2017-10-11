@@ -30,6 +30,7 @@ body {
   animation-name: rotate;
   animation-duration: 60s;
   animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 
@@ -38,6 +39,7 @@ body {
   animation-name: rotate;
   animation-duration: 3600s;
   animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 
@@ -46,4 +48,5 @@ body {
   animation-name: rotate;
   animation-duration: 86400s;
   animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
