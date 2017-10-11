@@ -1,0 +1,49 @@
+@Keyframes rotate{
+  From {transform: rotate(0deg)}
+  To {transform: rotate(360deg)}
+}
+
+body {
+    background: #fff;
+}
+
+.start {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 0 2em;
+}
+
+#clock {
+    position: relative;
+    width: 378px;
+    height: 378px;
+    background-image: url('images/clockFace.png');
+    margin: 3em auto;
+}
+
+#clock div {
+    position: absolute;
+}
+
+#clock img[src*='second'] {
+  animation-name: rotate;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+}
+
+
+
+#clock img[src*='minute'] {
+  animation-name: rotate;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+}
+
+
+
+#clock img[src*='hour'] {
+  animation-name: rotate;
+  animation-duration: 86400s;
+  animation-timing-function: linear;
+}

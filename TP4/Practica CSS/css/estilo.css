@@ -1,0 +1,49 @@
+.top-menu{
+  float: right;
+
+}
+
+.main-menu{
+  padding-bottom: 5px;
+  background-color: black;
+}
+
+.main-menu li a{
+  font-size: 20px;
+}
+
+.top-navbar li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 5px;
+    font-size: 10px;
+}
+
+.main-navbar li{
+  display: inline;
+  list-style-type: none;
+  margin-right: 100px;
+}
+
+.logo{
+  height: 50px;
+  width: 50px;
+}
+
+.cart{
+  float: right;
+}
+
+a:link{
+  text-decoration: none;
+  color:white;
+}
+a:visited {
+    display: none;
+}
+a:hover {
+    color: green;
+}
+a:active {
+    color: blue;
+}
