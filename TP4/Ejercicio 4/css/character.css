@@ -1,0 +1,28 @@
+.character {
+  width: 184px;
+  height: 325px;
+  background-image: url('../images/capguy-walk.png');
+  background-position: 0 0;
+  animation-name: run-x;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(8);
+}
+
+@keyframes run-x {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -1472px;
+  }
+}
+
+@keyframes run-y {
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: -1764px;
+  }
+}
