@@ -1,0 +1,123 @@
+.game{
+  position:relative;
+}
+.game div{
+  position: absolute;
+}
+.character {
+  top: 496px;
+  width: 104px;
+  height: 104px;
+  background-image: url('../images/cheetah.png');
+  background-position: 0 0;
+  animation-name: cheetah-x,cheetah-y;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(4),steps(2);
+  z-index: 1000;
+}
+
+.enemy {
+  top:568px;
+  left:759px;
+  width: 41px;
+  height: 32px;
+  background-image: url('../images/snail.png');
+  background-position: 0 0;
+  animation-name: enemy-x;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(3);
+  z-index: 1000;
+}
+
+.background-1 {
+  width: 800px;
+  height: 600px;
+  background-image: url('../images/ground.png');
+  background-position: 0 0;
+  animation-name: background-x;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 500;
+}
+.background-2 {
+  width: 800px;
+  height: 600px;
+  background-image: url('../images/rocks.png');
+  background-position: 0 0;
+  animation-name: background-x;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 400;
+}
+.background-3 {
+  width: 800px;
+  height: 600px;
+  background-image: url('../images/clouds_1.png');
+  background-position: 0 0;
+  animation-name: background-x;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 300;
+}
+.backgroun-4 {
+  width: 800px;
+  height: 600px;
+  background-image: url('../images/clouds_2.png');
+  background-position: 0 0;
+  animation-name: background-x;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 200;
+}
+.background-5 {
+  width: 800px;
+  height: 600px;
+  background-image: url('../images/sky.png');
+  background-position: 0 0;
+  animation-name: background-x;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 100;
+}
+
+@keyframes cheetah-x {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -422px;
+  }
+}
+
+@keyframes cheetah-y {
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: -202px;
+  }
+}
+@keyframes background-x {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -800px;
+  }
+}
+
+@keyframes enemy-x {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -123px;
+  }
+}
