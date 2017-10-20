@@ -4,17 +4,37 @@
 .game div{
   position: absolute;
 }
-.character {
+.characterWalk {
   top: 496px;
   width: 104px;
   height: 104px;
   background-image: url('../images/cheetah.png');
   background-position: 0 0;
-  animation-name: cheetah-x,cheetah-y;
-  animation-duration: 0.8s;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps(4),steps(2);
+  animation: characterWalk steps() 0.8s infinite;
   z-index: 1000;
+}
+
+@keyframes characterWalk {
+  from {background-position: 0px 0px; }
+  to {background-position: -422px -202px; }
+}
+
+.jump{
+  animation: jump steps(4) 0.8s infinite;
+}
+
+@keyframes jump {
+    from { background-position:0px -160px; }
+    to { background-position:-280px -160px; }
+}
+
+.duck{
+  animation: duck steps(4) 0.8s infinite;
+}
+
+@keyframes duck{
+  from { background-position:0px -160px; }
+  to { background-position:-280px -160px; }
 }
 
 .enemy {
@@ -24,100 +44,65 @@
   height: 32px;
   background-image: url('../images/snail.png');
   background-position: 0 0;
-  animation-name: enemy-x;
+  animation-name: enemy-x, enemy-move;
   animation-duration: 0.8s;
   animation-iteration-count: infinite;
   animation-timing-function: steps(3);
   z-index: 1000;
 }
 
-.background-1 {
+.bg-1 {
   width: 800px;
   height: 600px;
   background-image: url('../images/ground.png');
   background-position: 0 0;
-  animation-name: background-x;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: background-x 5s infinite linear;
   z-index: 500;
 }
-.background-2 {
+.bg-2 {
   width: 800px;
   height: 600px;
   background-image: url('../images/rocks.png');
   background-position: 0 0;
-  animation-name: background-x;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: background-x 10s infinite linear;
   z-index: 400;
 }
-.background-3 {
+.bg-3 {
   width: 800px;
   height: 600px;
   background-image: url('../images/clouds_1.png');
   background-position: 0 0;
-  animation-name: background-x;
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: background-x 15s infinite linear;
   z-index: 300;
 }
-.backgroun-4 {
+.bg-4 {
   width: 800px;
   height: 600px;
   background-image: url('../images/clouds_2.png');
   background-position: 0 0;
-  animation-name: background-x;
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: background-x 15s infinite linear;
   z-index: 200;
 }
-.background-5 {
+.bg-5 {
   width: 800px;
   height: 600px;
   background-image: url('../images/sky.png');
   background-position: 0 0;
-  animation-name: background-x;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: background-x 30s infinite linear;
   z-index: 100;
 }
 
-@keyframes cheetah-x {
-  from {
-    background-position-x: 0;
-  }
-  to {
-    background-position-x: -422px;
-  }
-}
-
-@keyframes cheetah-y {
-  from {
-    background-position-y: 0;
-  }
-  to {
-    background-position-y: -202px;
-  }
-}
 @keyframes background-x {
-  from {
-    background-position-x: 0;
-  }
-  to {
-    background-position-x: -800px;
-  }
+  from {background-position-x: 0; }
+  to {background-position-x: -800px; }
 }
 
 @keyframes enemy-x {
-  from {
-    background-position-x: 0;
-  }
-  to {
-    background-position-x: -123px;
-  }
+  from {background-position-x: 0; }
+  to {background-position-x: -123px; }
 }
+
+/*@keyframes enemy-move {
+  from {background-position-x: 60; }
+  to {background-position-x: -123px; }
+}*/

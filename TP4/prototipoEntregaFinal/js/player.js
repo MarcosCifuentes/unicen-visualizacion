@@ -14,3 +14,10 @@ function setJumping(){
     Player.isJumping =false;
   }
 }
+
+$(document).on('keydown', function(e) {
+    if (e.keyCode === 87) { // 87 is the letter W on the keyboard
+        $('.characterWalk').addClass('jump');
+        setTimeout(function() { $characterWalk.removeClass('jump'); }, 800);
+    }
+});
