@@ -1,3 +1,9 @@
+body{
+
+}
+#score{
+
+}
 .game{
   position:relative;
 }
@@ -5,10 +11,8 @@
   position: absolute;
 }
 .characterWalking {
-  border-style: solid;
-  border-width: 0.5px;
   top: 502px;
-  left: 100px;
+  left: 300px;
   width: 104px;
   height: 98px;
   background-image: url('../images/cheetah_walking.png');
@@ -32,7 +36,7 @@
 @keyframes jump {
   0%{transform: translateY(-0px); }
 
-  25%{transform: translateY(-0px); }
+  25%{transform: translateY(-100px); }
 
   50%{transform: translateY(-250px); }
 
@@ -55,70 +59,60 @@
 }
 
 
-    /*.duck{
-      animation: duck steps(4) 0.8s infinite;
-    }
+/*.duck{
+animation: duck steps(4) 0.8s infinite;
+}
 
-    @keyframes duck{
-      from { background-position:0px -160px; }
-      to { background-position:-280px -160px; }
-    }*/
+@keyframes duck{
+from { background-position:0px -160px; }
+to { background-position:-280px -160px; }
+}*/
 
 
-    .enemy {
-      top:568px;
-      left:900px;
-      width: 41px;
-      height: 32px;
-      background-image: url('../images/snail.png');
-      background-position: 0 0;
-      animation-name: enemyWalk steps(3) 0.8s infinite;
-      z-index: 1000;
-    }
+.enemy {
+  top:568px;
+  left:900px;
+  width: 41px;
+  height: 32px;
+  background-image: url('../images/snail.png');
+  background-position: 0 0;
+  animation-name: enemyWalk steps(3) 0.8s infinite;
+  z-index: 1000;
+}
 
-    @keyframes walkEnemy {100% { background-position: -123px; }}
+@keyframes walkEnemy {100% { background-position: -123px; }}
 
-    .bg-1 {
-      width: 800px;
-      height: 600px;
-      background-image: url('../images/ground.png');
-      background-position: 0 0;
-      animation: background 5s infinite linear;
-      overflow: hidden;
-      z-index: 500;
-    }
-    .bg-2 {
-      width: 800px;
-      height: 600px;
-      background-image: url('../images/rocks.png');
-      background-position: 0 0;
-      animation: background 10s infinite linear;
-      z-index: 400;
-    }
-    .bg-3 {
-      width: 800px;
-      height: 600px;
-      background-image: url('../images/clouds_1.png');
-      background-position: 0 0;
-      animation: background 15s infinite linear;
-      z-index: 300;
-    }
-    .bg-4 {
-      width: 800px;
-      height: 600px;
-      background-image: url('../images/clouds_2.png');
-      background-position: 0 0;
-      animation: background 15s infinite linear;
-      z-index: 200;
-    }
-    .bg-5 {
-      width: 800px;
-      height: 600px;
-      background-image: url('../images/sky.png');
-      background-position: 0 0;
-      animation: background 30s infinite linear;
-      z-index: 100;
-    }
+.backs{
+  width: 800px;
+  height: 600px;
+  background-position: 0 0;
+}
+#back-1{
+  background-image: url('../images/ground.png');
+  animation: background 5s infinite linear;
+  overflow: hidden;
+  z-index: 500;
+}
+#back-2{
+  background-image: url('../images/rocks.png');
+  animation: background 10s infinite linear;
+  z-index: 400;
+}
+#back-3{
+  background-image: url('../images/clouds_1.png');
+  animation: background 15s infinite linear;
+  z-index: 300;
+}
+#back-4{
+  background-image: url('../images/clouds_2.png');
+  animation: background 15s infinite linear;
+  z-index: 200;
+}
+#back-5{
+  background-image: url('../images/sky.png');
+  animation: background 30s infinite linear;
+  z-index: 100;
+}
 
-    @keyframes background {100% {background-position: -800px; }
-    }
+@keyframes background {100% {background-position: -800px; }
+}

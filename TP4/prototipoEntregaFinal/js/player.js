@@ -1,23 +1,20 @@
 class Player{
-  constructor(){
-    this.numeroRectangulo=numeroRectangulo;
-    this.height=20;
-    this.width=numeroRectangulo*20+20;
-    this.color=this.getRandomColor();
+  constructor(){}
+
+  jump(){
+    $('.characterWalking').addClass('jump');
+    setTimeout(function() { $('.characterWalking').removeClass('jump'); }, 800);
   }
-function setJumping(){
-  player isJumping=true;
-  anim=document.getElementsByClassName('className');
-  Player.div.animetion=anim;
-  anim.addEventListener('animationEnd',function(){
-    Player anim='run';
-    Player.isJumping =false;
-  }
+
+  dead(){
+    $('.characterWalking').addClass('died');
+
+  };
 }
 
-$(document).on('keydown', function(e) {
-    if (e.keyCode === 87) { // 87 is the letter W on the keyboard
-        $('.characterWalk').addClass('jump');
-        setTimeout(function() { $characterWalk.removeClass('jump'); }, 800);
-    }
-});
+// $(document).on('keydown', function(e) {
+//     if ((e.keyCode === 87) || (e.keyCode === 38)) { // 68 is the letter D on the keyboard
+//         $('.characterWalk').addClass('duck');
+//         setTimeout(function() { $('.characterWalk').removeClass('duck'); }, 800);
+//     }
+// });
