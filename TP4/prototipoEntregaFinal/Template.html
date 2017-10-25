@@ -3,45 +3,22 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Template</title>
-	<link rel="stylesheet" href="css/characterAndBackground.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/styleAndAnimations.css">
 </head>
 <body>
-	<div class="game">
-		<div class="bg-1"><div class="enemy"></div></div>
+	<div class="container-fluid game text-center ">
+		<div class="bg-1"><div id="enemy" class="enemy"></div></div>
 		<div class="bg-2"></div>
 		<div class="bg-3"></div>
 		<div class="bg-4"></div>
 		<div class="bg-5"></div>
-		<div class="characterWalk"></div>
-		<div class="enemy"></div>
+		<div class="characterWalking"></div>
 	</div>
-	<!-- <input type="text" size="40" onkeypress="myFunction(event)">
-
-	<script>
-	/* In this example, we use a cross-browser solution, because the keyCode property does not work on the onkeypress event in Firefox. However, the which property does.
-
-	Explanation of the first line in the function below: if the browser supports event.which, then use event.which, otherwise use event.keyCode */
-
-
-	document.addEventListener('keydown', event => {
-	if (event.keyCode === 37) {
-	// playerMove(-1);
-	alert("izquierda");
-} else if (event.keyCode === 39) {
-// playerMove(1);
-alert("derecha");
-} else if (event.keyCode === 38) {
-alert("arriba");
-}	else if (event.keyCode === 40) {
-playerDrop();
-}	else if (event.keyCode === 81) {
-playerRotate(-1);
-} else if (event.keyCode === 87) {
-playerRotate(1);
-}
-});
-
 </script> -->
 </body>
-<script src="js/character-walk.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="js/game.js"></script>
 </html>
