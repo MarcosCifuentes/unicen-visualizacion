@@ -7,7 +7,6 @@
 
 .centro{
   background-color: #FF9500;
-  bottom: 100%;
 }
 
 footer{
@@ -25,4 +24,8 @@ footer{
 
 .instrucciones{
   font-size: 20px;
+}
+
+#imagen{
+  width: 100%;
 }
