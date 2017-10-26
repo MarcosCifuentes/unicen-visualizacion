@@ -1,0 +1,28 @@
+
+@font-face {
+    font-family: "My Custom Font";
+    src: url('../fonts/FNL_DEMO-KCFonts.ttf') format("truetype");
+}
+
+
+.centro{
+  background-color: #FF9500;
+  bottom: 100%;
+}
+
+footer{
+  position: fixed;
+  top:94%;
+}
+
+.centro{
+  font-family: "My Custom Font", Verdana, Tahoma;
+}
+
+.jugar{
+  font-size: 30px;
+}
+
+.instrucciones{
+  font-size: 20px;
+}

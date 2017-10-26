@@ -1,0 +1,124 @@
+body{
+font-family: "My Custom Font", Verdana, Tahoma;
+background-color: #ffc107;
+}
+
+.puntaje{
+font-size: 25px;
+font-family: Serif , Verdana, Tahoma;
+}
+@font-face {
+    font-family: "My Custom Font";
+    src: url('../fonts/FNL_DEMO-KCFonts.ttf') format("truetype");
+}
+
+
+#gameOver{
+  visibility: hidden;
+  font-family:Serif , Verdana, Tahoma;
+  font-size: 30px;
+  background-color: #ffc107;
+  border-style: solid;
+  border-width: 5px;
+  top: 500px;
+}
+.game{
+  position:relative;
+}
+.game div{
+  position: absolute;
+}
+.characterWalking {
+  top: 502px;
+  left: 300px;
+  width: 104px;
+  height: 98px;
+  background-image: url('../images/cheetah_walking.png');
+  background-position: 0 0;
+  animation: walk steps(8) 0.8s infinite;
+  z-index: 1000;
+}
+
+@keyframes walk {
+  100% { background-position: -832px; }
+}
+
+.jump{
+  top: 482px;
+  width: 96px;
+  height: 118px;
+  background-image: url('../images/cheetah_jumping_96x118.png');
+  animation: jump steps(4) 0.8s infinite;
+}
+
+@keyframes jump {
+  0%{transform: translateY(-0px); }
+
+  25%{transform: translateY(-100px); }
+
+  50%{transform: translateY(-250px); }
+
+  75%{transform: translateY(-150px); }
+
+  100%{transform: translateY(-0px);background-position: -384px;}
+
+}
+
+.died{
+  top: 495px;
+  width: 118px;
+  height: 105px;
+  background-image: url('../images/cheetah_died.png');
+  animation: died steps(6) 0.8s infinite;
+}
+
+@keyframes died {
+  100% { background-position: -708px; }
+}
+
+.enemy {
+  top:568px;
+  left:900px;
+  width: 41px;
+  height: 32px;
+  background-image: url('../images/snail.png');
+  background-position: 0 0;
+  animation-name: enemyWalk steps(3) 0.8s infinite;
+  z-index: 1000;
+}
+
+@keyframes walkEnemy {100% { background-position: -123px; }}
+
+.backs{
+  width: 800px;
+  height: 600px;
+  background-position: 0 0;
+}
+#back-1{
+  background-image: url('../images/ground.png');
+  animation: background 5s infinite linear;
+  overflow: hidden;
+  z-index: 500;
+}
+#back-2{
+  background-image: url('../images/rocks.png');
+  animation: background 10s infinite linear;
+  z-index: 400;
+}
+#back-3{
+  background-image: url('../images/clouds_1.png');
+  animation: background 15s infinite linear;
+  z-index: 300;
+}
+#back-4{
+  background-image: url('../images/clouds_2.png');
+  animation: background 15s infinite linear;
+  z-index: 200;
+}
+#back-5{
+  background-image: url('../images/sky.png');
+  animation: background 30s infinite linear;
+  z-index: 100;
+}
+
+@keyframes background {100% {background-position: -800px; }}

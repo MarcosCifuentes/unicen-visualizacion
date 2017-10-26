@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Template</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/styleAndAnimationsGame.css">
+</head>
+<body>
+	<header>
+		<div class="text-center">
+	    <h1>Chester Cheetah Slow Day</h1>
+	  </div>
+		<div class="container text-center">
+			<div class="inline-block">
+				<p class="puntaje">Puntaje: <span id="scoreIngame"></span> <img src="images/UpArrowKey.png" alt="UpArrowKey"> o <img src="images/W.png" alt="W"> para saltar</p>
+			</div>
+			<div class="">
+				<p >	</p>
+			</div>
+
+		</div>
+	</header>
+
+<div class="container-fluid row justify-content-md-center ">
+
+	<div id="game" class="container-fluid game row justify-content-md-center ">
+		<div id="back-1" class="backs"><div id="enemy" class="enemy"></div></div>
+		<div id="back-2" class="backs"></div>
+		<div id="back-3" class="backs"></div>
+		<div id="back-4" class="backs"></div>
+		<div id="back-5" class="backs"></div>
+		<div id="character" class="characterWalking"></div>
+	</div>
+	<div id="gameOver" class="score">
+		<p>!!!TE MATO UN CARACOL¡¡¡</p>
+		<p>Tu puntaje fue de <span id="scoreEndGame"></span> puntos</p>
+		<button type="button" name="button"><a href="game.html">Intentar de nuevo</a></button><button type="button" name="button"><a href="index.html">Salir</a></button>
+	</div>
+	</div>
+
+</script>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="js/player.js"></script>
+<script src="js/game.js"></script>
+
+</html>
