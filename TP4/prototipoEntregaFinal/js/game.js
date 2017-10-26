@@ -1,5 +1,6 @@
  let player = new Player();
  let id;
+ let score = 0;
 
 function isCollision(object){
   let character = $("#character");
@@ -41,6 +42,8 @@ function isCollision(object){
 
   function update(){
     this.enemyMoveUpdate(15);
+    score += 1;
+    document.getElementById('scoreIngame').innerHTML = score;
 
     if(this.isCollision('enemy')){
       player.dead();
@@ -57,6 +60,10 @@ function isCollision(object){
     document.getElementById('back-5').style.webkitAnimationPlayState = 'paused';
     document.getElementById('character').style.webkitAnimationPlayState = 'paused';
     clearInterval(id);
+    document.getElementById("game").style.webkitFilter = "blur(5px)";
+    document.getElementById('scoreEndGame').innerHTML = score;
+    document.getElementById('gameOver').style.visibility = 'visible';
+    document.getElementById('gameOver').style.zIndex = '1200';
   }
 
   function play(){

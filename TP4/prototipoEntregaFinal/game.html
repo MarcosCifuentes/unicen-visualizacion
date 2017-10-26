@@ -4,28 +4,39 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Template</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/styleAndAnimations.css">
+	<link rel="stylesheet" href="css/styleAndAnimationsGame.css">
 </head>
 <body>
 	<header>
-		<div class="d-inline row container">
-			<div class="col col-lg-6">
-				<p class="">Puntaje:</p>
+		<div class="text-center">
+	    <h1>Chester Cheetah Slow Day</h1>
+	  </div>
+		<div class="container text-center">
+			<div class="inline-block">
+				<p class="puntaje">Puntaje: <span id="scoreIngame"></span> <img src="images/UpArrowKey.png" alt="UpArrowKey"> o <img src="images/W.png" alt="W"> para saltar</p>
 			</div>
-			<div class="col col-lg-6">
-				<p id="puntaje" class="">	</p>
+			<div class="">
+				<p >	</p>
 			</div>
 
 		</div>
 	</header>
 
-	<div class="container-fluid game row justify-content-md-center ">
+<div class="container-fluid row justify-content-md-center ">
+
+	<div id="game" class="container-fluid game row justify-content-md-center ">
 		<div id="back-1" class="backs"><div id="enemy" class="enemy"></div></div>
 		<div id="back-2" class="backs"></div>
 		<div id="back-3" class="backs"></div>
 		<div id="back-4" class="backs"></div>
 		<div id="back-5" class="backs"></div>
 		<div id="character" class="characterWalking"></div>
+	</div>
+	<div id="gameOver" class="score">
+		<p>!!!TE MATO UN CARACOL¡¡¡</p>
+		<p>Tu puntaje fue de <span id="scoreEndGame"></span> puntos</p>
+		<button type="button" name="button"><a href="game.html">Intentar de nuevo</a></button><button type="button" name="button"><a href="index.html">Salir</a></button>
+	</div>
 	</div>
 
 </script>

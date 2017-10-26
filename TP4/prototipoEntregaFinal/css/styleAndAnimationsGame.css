@@ -1,8 +1,26 @@
 body{
-
+font-family: "My Custom Font", Verdana, Tahoma;
+background-color: #ffc107;
 }
-#score{
 
+.puntaje{
+font-size: 25px;
+font-family: Serif , Verdana, Tahoma;
+}
+@font-face {
+    font-family: "My Custom Font";
+    src: url('../fonts/FNL_DEMO-KCFonts.ttf') format("truetype");
+}
+
+
+#gameOver{
+  visibility: hidden;
+  font-family:Serif , Verdana, Tahoma;
+  font-size: 30px;
+  background-color: #ffc107;
+  border-style: solid;
+  border-width: 5px;
+  top: 500px;
 }
 .game{
   position:relative;
@@ -58,17 +76,6 @@ body{
   100% { background-position: -708px; }
 }
 
-
-/*.duck{
-animation: duck steps(4) 0.8s infinite;
-}
-
-@keyframes duck{
-from { background-position:0px -160px; }
-to { background-position:-280px -160px; }
-}*/
-
-
 .enemy {
   top:568px;
   left:900px;
@@ -114,5 +121,4 @@ to { background-position:-280px -160px; }
   z-index: 100;
 }
 
-@keyframes background {100% {background-position: -800px; }
-}
+@keyframes background {100% {background-position: -800px; }}
