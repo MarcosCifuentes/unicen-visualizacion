@@ -11,7 +11,7 @@
 
 footer{
   position: fixed;
-  top:94%;
+
 }
 
 .centro{
@@ -24,8 +24,4 @@ footer{
 
 .instrucciones{
   font-size: 20px;
-}
-
-#imagen{
-  width: 100%;
 }
