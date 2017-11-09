@@ -53,10 +53,10 @@ function contains(a, obj) {
 
 function mostrarImagenes() {
   $('.img-container').each(function () {
-    if(imagenes[contador]){
-      $(this).find(".like-count").html(imagenes[contador].likes);
-      $(this).find(".image").attr("src", imagenes[contador++].url)
-    }
+    $.get('../templates/imagen.mst', function(template) {
+    var rendered = Mustache.render(template, {imagenes: imagenes});
+    $('.layout').append(rendered);
+  });
   });
 
   layout.imagesLoaded().progress(function () {
@@ -73,10 +73,10 @@ function mostrarImagenes() {
 
 
 
-$(".search-bar").on("submit", function (ev) {
-  ev.preventDefault();
-  let searchData = $(this).serializeArray()[0].value;
-  $(".loading-icon").addClass("fade-loading");
-  $(".small-loading-icon").removeClass("d-none");
-  llamado(searchData, "popular");
-});
+// $(".search-bar").on("submit", function (ev) {
+//   ev.preventDefault();
+//   let searchData = $(this).serializeArray()[0].value;
+//   $(".loading-icon").addClass("fade-loading");
+//   $(".small-loading-icon").removeClass("d-none");
+//   llamado(searchData, "popular");
+// });
