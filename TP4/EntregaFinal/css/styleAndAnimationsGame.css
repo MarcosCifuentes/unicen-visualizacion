@@ -28,6 +28,13 @@ font-family: Serif , Verdana, Tahoma;
 .game div{
   position: absolute;
 }
+.life{
+  width: 40px;
+  height: 40px;
+}
+
+
+/*------------------------------Animations-----------------------------------*/
 .characterWalking {
   top: 502px;
   left: 300px;

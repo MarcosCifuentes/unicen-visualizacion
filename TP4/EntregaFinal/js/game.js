@@ -45,7 +45,15 @@ function isCollision(object){
     score += 1;
     document.getElementById('scoreIngame').innerHTML = score;
 
-    if(this.isCollision('enemy')){
+    if(this.isCollision('enemy')&&(player.vidas > 1)){
+      // player.colide();
+      let enemy =  $("#enemy");
+      this.enemyMoveUpdate(500);
+      document.getElementById('heart'+player.vidas).src='images/brokenheart.png';
+      player.vidas=player.vidas-1;
+    }
+    else if(this.isCollision('enemy')&&(player.vidas == 1)){
+      document.getElementById('heart'+player.vidas).src='images/brokenheart.png';
       player.dead();
       setTimeout(function() {this.gameover();}, 800);
     }

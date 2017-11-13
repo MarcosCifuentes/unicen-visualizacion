@@ -1,5 +1,7 @@
 class Player{
-  constructor(){}
+  constructor(){
+    this.vidas=3;
+  }
 
   jump(){
     $('.characterWalking').addClass('jump');
@@ -8,6 +10,11 @@ class Player{
 
   dead(){
     $('.characterWalking').addClass('died');
+
+  };
+
+  colide(){
+    $('.characterWalking').addClass('colide');
 
   };
 }
