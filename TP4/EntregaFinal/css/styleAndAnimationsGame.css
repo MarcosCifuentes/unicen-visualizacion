@@ -22,12 +22,15 @@ font-family: Serif , Verdana, Tahoma;
   border-width: 5px;
   top: 500px;
 }
-.game{
-  position:relative;
+#game{
+  position: relative;
+
 }
-.game div{
-  position: absolute;
+
+#game div{
+  position:absolute;
 }
+
 .life{
   width: 40px;
   height: 40px;
@@ -36,14 +39,15 @@ font-family: Serif , Verdana, Tahoma;
 
 /*------------------------------Animations-----------------------------------*/
 .characterWalking {
+  position: relative;
   top: 502px;
-  left: 300px;
   width: 104px;
   height: 98px;
   background-image: url('../images/cheetah_walking.png');
   background-position: 0 0;
   animation: walk steps(8) 0.8s infinite;
   z-index: 1000;
+  transform: translate(-200px,0);
 }
 
 @keyframes walk {
@@ -97,6 +101,7 @@ font-family: Serif , Verdana, Tahoma;
 @keyframes walkEnemy {100% { background-position: -123px; }}
 
 .backs{
+  position: absolute;
   width: 800px;
   height: 600px;
   background-position: 0 0;

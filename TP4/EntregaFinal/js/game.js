@@ -3,11 +3,11 @@
  let score = 0;
 
 function isCollision(object){
-  let character = $("#character");
-  let cy= character.offset().top;
-  let cx = character.offset().left;
-  let ch = character.outerHeight();
-  let cw = character.outerWidth();
+  let personaje = $("#personaje");
+  let cy= personaje.offset().top;
+  let cx = personaje.offset().left;
+  let ch = personaje.outerHeight();
+  let cw = personaje.outerWidth();
 
   let element = $("#"+object);
   let ey = element.offset().top;
@@ -66,7 +66,7 @@ function isCollision(object){
     document.getElementById('back-3').style.webkitAnimationPlayState = 'paused';
     document.getElementById('back-4').style.webkitAnimationPlayState = 'paused';
     document.getElementById('back-5').style.webkitAnimationPlayState = 'paused';
-    document.getElementById('character').style.webkitAnimationPlayState = 'paused';
+    document.getElementById('personaje').style.webkitAnimationPlayState = 'paused';
     clearInterval(id);
     document.getElementById("game").style.webkitFilter = "blur(5px)";
     document.getElementById('scoreEndGame').innerHTML = score;
