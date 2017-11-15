@@ -19,6 +19,7 @@ body{
 }
 
 #gameOver{
+  padding: 10px;
   visibility: hidden;
   font-family: "LCD_Solid" , Verdana, Tahoma;
   font-size: 25px;
@@ -59,11 +60,11 @@ body{
 }
 
 .home{
-  transform: translate(250px,0);
+  transform: translate(190px,0);
 }
 
 .retry{
-  transform: translate(80px,0);
+  transform: translate(50px,0);
 }
 /*------------------------------Animations-----------------------------------*/
 .characterWalking {
