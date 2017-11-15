@@ -1,30 +1,33 @@
 body{
-font-family: "My Custom Font", Verdana, Tahoma;
-background-color: #ffc107;
+  font-family: "FNL_DEMO-KCFonts", Verdana, Tahoma;
+  background-color: #ffc107;
 }
 
 .puntaje{
-font-size: 25px;
-font-family: Serif , Verdana, Tahoma;
-}
-@font-face {
-    font-family: "My Custom Font";
-    src: url('../fonts/FNL_DEMO-KCFonts.ttf') format("truetype");
+  font-size: 20px;
+  font-family: "LCD_Solid" , Verdana, Tahoma;
 }
 
+@font-face {
+  font-family: "FNL_DEMO-KCFonts";
+  src: url('../fonts/FNL_DEMO-KCFonts.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "LCD_Solid";
+  src: url('../fonts/LCD_Solid.ttf') format("truetype");
+}
 
 #gameOver{
   visibility: hidden;
-  font-family:Serif , Verdana, Tahoma;
-  font-size: 30px;
+  font-family: "LCD_Solid" , Verdana, Tahoma;
+  font-size: 25px;
   background-color: #ffc107;
-  border-style: solid;
-  border-width: 5px;
-  top: 500px;
+  transform: translate(0,200px);
 }
+
 #game{
   position: relative;
-
 }
 
 #game div{
@@ -36,7 +39,32 @@ font-family: Serif , Verdana, Tahoma;
   height: 40px;
 }
 
+.key{
+  height: 45px;
+  width: 45px;
+}
 
+#vidas,#puntaje,#instrucciones{
+  position: relative;
+  z-index: 1000;
+  transform: translate(0,5px);
+}
+
+#vidas{
+  transform: translate(-300px,5px);
+}
+
+#instrucciones{
+  transform: translate(250px,5px);
+}
+
+.home{
+  transform: translate(250px,0);
+}
+
+.retry{
+  transform: translate(80px,0);
+}
 /*------------------------------Animations-----------------------------------*/
 .characterWalking {
   position: relative;
@@ -63,16 +91,15 @@ font-family: Serif , Verdana, Tahoma;
 }
 
 @keyframes jump {
-  0%{transform: translateY(-0px); }
+  0%{transform: translate(-200px,-0px); }
 
-  25%{transform: translateY(-100px); }
+  25%{transform: translate(-200px,-100px); }
 
-  50%{transform: translateY(-250px); }
+  50%{transform: translate(-200px,-250px); }
 
-  75%{transform: translateY(-150px); }
+  75%{transform: translate(-200px,-150px); }
 
-  100%{transform: translateY(-0px);background-position: -384px;}
-
+  100%{transform: translate(-200px,-0px);background-position: -384px; }
 }
 
 .died{
@@ -98,7 +125,9 @@ font-family: Serif , Verdana, Tahoma;
   z-index: 1000;
 }
 
-@keyframes walkEnemy {100% { background-position: -123px; }}
+@keyframes walkEnemy {
+  100% { background-position: -123px; }
+}
 
 .backs{
   position: absolute;
@@ -106,31 +135,38 @@ font-family: Serif , Verdana, Tahoma;
   height: 600px;
   background-position: 0 0;
 }
+
 #back-1{
   background-image: url('../images/ground.png');
   animation: background 5s infinite linear;
   overflow: hidden;
   z-index: 500;
 }
+
 #back-2{
   background-image: url('../images/rocks.png');
   animation: background 10s infinite linear;
   z-index: 400;
 }
+
 #back-3{
   background-image: url('../images/clouds_1.png');
   animation: background 15s infinite linear;
   z-index: 300;
 }
+
 #back-4{
   background-image: url('../images/clouds_2.png');
   animation: background 15s infinite linear;
   z-index: 200;
 }
+
 #back-5{
   background-image: url('../images/sky.png');
   animation: background 30s infinite linear;
   z-index: 100;
 }
 
-@keyframes background {100% {background-position: -800px; }}
+@keyframes background {
+  100% {background-position: -800px; }
+}

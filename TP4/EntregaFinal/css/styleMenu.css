@@ -1,9 +1,13 @@
 
 @font-face {
-    font-family: "My Custom Font";
-    src: url('../fonts/FNL_DEMO-KCFonts.ttf') format("truetype");
+  font-family: "FNL_DEMO-KCFonts";
+  src: url('../fonts/FNL_DEMO-KCFonts.ttf') format("truetype");
 }
 
+@font-face {
+  font-family: "LCD_Solid";
+  src: url('../fonts/LCD_Solid.ttf') format("truetype");
+}
 
 .centro{
   background-color: #FF9500;
@@ -16,13 +20,14 @@ footer{
 }
 
 .centro{
-  font-family: "My Custom Font", Verdana, Tahoma;
+  font-family: "FNL_DEMO-KCFonts", Verdana, Tahoma;
 }
 
 .jugar{
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .instrucciones{
   font-size: 20px;
+  font-family: "LCD_Solid", Verdana, Tahoma;
 }
