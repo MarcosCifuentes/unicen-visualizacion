@@ -114,6 +114,18 @@ body{
   100% { background-position: -708px; }
 }
 
+.hurt{
+  top: 495px;
+  width: 118px;
+  height: 105px;
+  background-image: url('../images/cheetah_died.png');
+  animation: hurt steps(2) 0.3s infinite;
+}
+
+@keyframes hurt {
+  100% { background-position: -236px; }
+}
+
 .enemy {
   top:568px;
   left:900px;

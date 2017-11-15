@@ -13,8 +13,8 @@ class Player{
 
   };
 
-  colide(){
-    $('.characterWalking').addClass('colide');
-
-  };
+  hurt(){
+    $('.characterWalking').addClass('hurt');
+    setTimeout(function() { $('.characterWalking').removeClass('hurt'); }, 300);
+    }
 }

@@ -46,7 +46,7 @@ function isCollision(object){
     document.getElementById('scoreIngame').innerHTML = score;
 
     if(this.isCollision('enemy')&&(player.vidas > 1)){
-      // player.colide();
+      player.hurt();
       let enemy =  $("#enemy");
       this.enemyMoveUpdate(500);
       document.getElementById('heart'+player.vidas).src='images/brokenheart.png';
