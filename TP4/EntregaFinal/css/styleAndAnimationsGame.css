@@ -60,11 +60,15 @@ body{
 }
 
 .home{
-  transform: translate(190px,0);
+  font-size: 20px;
+  transform: translate(170px,0);
+  background-color: rgb(178, 178, 178);
 }
 
 .retry{
+  font-size: 20px;
   transform: translate(50px,0);
+  background-color: rgb(178, 178, 178);
 }
 /*------------------------------Animations-----------------------------------*/
 .characterWalking {
