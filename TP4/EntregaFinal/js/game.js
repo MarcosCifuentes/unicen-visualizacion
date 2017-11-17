@@ -1,6 +1,7 @@
  let player = new Player();
  let id;
  let score = 0;
+ let colision = false;
 
 function isCollision(object){
   let personaje = $("#personaje");
@@ -30,6 +31,7 @@ function isCollision(object){
     }else{
       let distanceX = Math.floor((Math.random()) + innerWidth);
       this.updateDistance("enemy",distanceX);
+      colision = false;
     }
   }
 
@@ -45,17 +47,16 @@ function isCollision(object){
     score += 1;
     document.getElementById('scoreIngame').innerHTML = score;
 
-    if(this.isCollision('enemy')&&(player.vidas > 1)){
+    if(this.isCollision('enemy')&&(player.vidas >= 1)&&(!colision)){
+      colision = true;
       player.hurt();
-      let enemy =  $("#enemy");
-      this.enemyMoveUpdate(500);
       document.getElementById('heart'+player.vidas).src='images/brokenheart.png';
       player.vidas=player.vidas-1;
     }
-    else if(this.isCollision('enemy')&&(player.vidas == 1)){
-      document.getElementById('heart'+player.vidas).src='images/brokenheart.png';
+    else if(this.isCollision('enemy')&&(player.vidas == 0)){
+      // document.getElementById('heart'+player.vidas).src='images/brokenheart.png';
       player.dead();
-      setTimeout(function() {this.gameover();}, 800);
+      setTimeout(function() {this.gameover();}, 1000);
     }
   }
 
